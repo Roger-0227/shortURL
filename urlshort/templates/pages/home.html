@@ -1,4 +1,40 @@
 {% extends "base.html" %} {% block content %}
 
-<h2>hello</h2>
+<section class="flex items-center justify-center h-screen">
+  <form class="grid grid-cols-2 gap-2">
+    <label class="join w-full">
+      <span
+        class="input input-bordered flex items-center gap-2 opacity-70 join-item"
+        >原網址</span
+      >
+      <input
+        id="company-website"
+        name="company-website"
+        placeholder="http://www.example.com"
+        type="text"
+        class="input input-bordered flex items-center gap-2 opacity-70 join-item"
+      />
+    </label>
+    <label class="join">
+      <span
+        class="input input-bordered flex items-center gap-2 opacity-70 join-item"
+        >短網址</span
+      >
+      <input
+        id="company-website"
+        name="company-website"
+        placeholder="可自行填寫或自動產生"
+        type="text"
+        class="input input-bordered flex items-center gap-2 opacity-70 join-item"
+      />
+    </label>
+    <label class="col-span-2">
+      <textarea
+        class="textarea textarea-bordered w-full opacity-70"
+        placeholder="備註"
+      ></textarea>
+    </label>
+  </form>
+</section>
+
 {% endblock %}

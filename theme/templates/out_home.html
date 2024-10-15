@@ -1,7 +1,11 @@
 {% extends "base.html" %} {% block outhome %}
 <div class="container mx-auto">
   <section class="flex items-center justify-center h-screen">
-    <a href="{% url 'urlshort:home' %}" class="btn text-5xl">前往五倍之路</a>
+    <a
+      href="{% url 'urlshort:home' %}"
+      class="btn btn-ghost text-5xl hover:bg-red-400"
+      >前往五倍之路</a
+    >
   </section>
 </div>
 {% endblock %}
