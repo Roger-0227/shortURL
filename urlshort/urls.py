@@ -6,5 +6,6 @@ app_name = "urlshort"
 
 urlpatterns = [
     path("", views.out_home, name="out_home"),
-    path("home", views.home, name="home"),
+    path("index", views.index, name="index"),
+    path("show/<int:id>", views.show, name="show"),
 ]

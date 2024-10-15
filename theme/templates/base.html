@@ -8,9 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     {% tailwind_css %}
   </head>
-
-  <body class="bg-gray-50 font-serif leading-normal tracking-normal">
-    {% block outhome %}{% endblock %}
+  <body>
+    <div class="bg-gray-50 font-serif leading-normal tracking-normal">
+      {% block outhome %}{% endblock %}
+      <div class="container mx-auto">{% block content %} {% endblock %}</div>
+    </div>
   </body>
-  <div class="container mx-auto">{% block content %} {% endblock %}</div>
 </html>
