@@ -15,7 +15,7 @@ def index(request):
         form = ShortURLForm(request.POST)
         if form.is_valid() and fields:
             form = form.save(commit=False)
-            form.short_url = fields
+            form.short_url = f"http://127.0.0.1:8000/{fields}"
             form.save()
             return render(request, "pages/show.html", {"form": form})
         return render(request, "pages/index.html", {"form": form})
@@ -29,7 +29,7 @@ def show(request, id):
 
 
 def redirect(request, url):
-    url_content = ShortURL.objects.get(short_url=url)
+    url_content = ShortURL.objects.get(short_url=f"http://127.0.0.1:8000/{url}")
     url = url_content.url
     return HttpResponseRedirect(url)
 
