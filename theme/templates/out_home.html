@@ -1,11 +1,19 @@
 {% extends "base.html" %} {% block outhome %}
-<div class="container mx-auto">
-  <section class="flex items-center justify-center h-screen">
-    <a
-      href="{% url 'urlshort:index' %}"
-      class="btn btn-ghost text-5xl hover:bg-red-400"
-      >前往五倍之路</a
-    >
-  </section>
+<div
+  class="hero min-h-screen"
+  style="
+    background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);
+  "
+>
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="container mx-auto">
+    <section class="flex items-center justify-center h-screen">
+      <a
+        href="{% url 'urlshort:index' %}"
+        class="btn btn-ghost text-7xl text-white w-[500px] h-[60px] hover:bg-red-400"
+        >前往五倍之路</a
+      >
+    </section>
+  </div>
 </div>
 {% endblock %}

@@ -17,6 +17,7 @@
     {% tailwind_css %}
   </head>
   <body>
+    {% include "nav.html" %}
     <div class="bg-gray-50 font-serif leading-normal tracking-normal">
       {% block outhome %}{% endblock %}
       <div class="container mx-auto">{% block content %} {% endblock %}</div>
