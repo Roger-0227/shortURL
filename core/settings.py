@@ -30,7 +30,7 @@ if is_dev():
 SECRET_KEY = os.getenv("APP_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "54.95.125.250",
@@ -57,6 +57,8 @@ TAILWIND_APP_NAME = "theme"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
