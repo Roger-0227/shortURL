@@ -1,5 +1,7 @@
-# ShortURL
-縮短您的網址
+# [ShortURL](http://54.95.125.250:8000/)
+縮短您的網址（點選標題）
+![短網址](index.png)
+
 ## 使用技術
 - 後端：Python、Django
 - 套件：
