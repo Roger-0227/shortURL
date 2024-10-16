@@ -20,17 +20,24 @@
         value="{{ form.url }}"
       />
     </label>
-    <label class="join">
+    <label x-data="" class="join">
       <span
         class="input input-bordered flex items-center gap-2 opacity-70 join-item text-nowrap"
         >短網址</span
       >
       <input
+        x-ref="content"
         type="text"
         class="input input-bordered flex items-center gap-2 opacity-70 join-item w-full"
         name="url"
         value="{{ form.short_url }}"
       />
+      <button
+        @click="navigator.clipboard.writeText($refs.content.value)"
+        class="btn w-[60px] text-xl hover:bg-gray-300"
+      >
+        <i class="fa-regular fa-copy"></i>
+      </button>
     </label>
     <label class="col-span-2">
       <textarea
