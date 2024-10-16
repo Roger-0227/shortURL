@@ -35,7 +35,8 @@ def redirect(request, url):
 
 
 def radom_unique(str_url):
-    if not ShortURL.objects.filter(short_url=str_url).exists():
+    short_url = f"http://127.0.0.1:8000/{str_url}"
+    if not ShortURL.objects.filter(short_url=short_url).exists():
         if str_url == None:
             radom_field = "".join(random.choices(string.ascii_letters, k=6))
         else:
