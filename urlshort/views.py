@@ -3,6 +3,7 @@ import random
 import string
 from urlshort.models import ShortURL
 from urlshort.form.url_form import ShortURLForm
+from django.contrib import messages
 
 
 def out_home(request):
@@ -17,7 +18,9 @@ def index(request):
             form = form.save(commit=False)
             form.short_url = f"http://127.0.0.1:8000/{fields}"
             form.save()
+            messages.success(request, "短網址完成")
             return render(request, "pages/show.html", {"form": form})
+        messages.error(request, "請重新輸入")
         return render(request, "pages/index.html", {"form": form})
     form = ShortURLForm()
     return render(request, "pages/index.html", {"form": form})

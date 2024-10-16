@@ -1,4 +1,11 @@
-{% extends "base.html" %} {% block content %} {% load qr_code %}
+{% extends "base.html" %} {% block content %} {% load qr_code %} 
+{% if messages%} 
+{% for message in messages %}
+<div class="border bg-red-200 shadow-md p-4 mb-4 text-center">
+  {{ message }}
+</div>
+{% endfor%} 
+{% endif %}
 <section class="flex items-center justify-center h-screen flex-nowrap">
   <div class="grid grid-cols-2 gap-2 w-3/4">
     <label class="join w-full">
@@ -44,7 +51,7 @@
     </label>
   </div>
   <div>
-    <img class="" src="{% qr_url_from_text  form.short_url  %}" alt="qrcode" />
+    <img src="{% qr_url_from_text  form.short_url  %}" alt="qrcode" />
   </div>
 </section>
 {% endblock %}
