@@ -1,7 +1,11 @@
 # [ShortURL](http://54.95.125.250:8000/)
 
 縮短您的網址（點選標題）
-![短網址](cover.png)
+
+<div align="center">
+    <img src="cover.png" alt="Image1" width="400">
+    <img src="cover1.png" alt="Image2" width="400">
+</div>
 
 ## 使用技術
 
@@ -11,6 +15,7 @@
   - django-tailwind
   - django-browser-reload
   - django-qr-code
+  - beautifulsoup4
 
 ### 執行環境
 
