@@ -14,11 +14,13 @@ def out_home(request):
 
 def index(request):
     if request.method == "POST":
+        is_enable = request.POST.get("is_enable")
         fields = random_unique(request.POST.get("short_url"))
         form = ShortURLForm(request.POST)
         if form.is_valid() and fields:
             form = form.save(commit=False)
             form.short_url = f"http://54.95.125.250:8000/{fields}"
+            form.is_enable = bool(is_enable)
             form.save()
             messages.success(request, "短網址完成")
             return render(request, "pages/show.html", {"form": form})

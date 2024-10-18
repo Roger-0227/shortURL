@@ -5,7 +5,7 @@ from urlshort.models import ShortURL
 class ShortURLForm(forms.ModelForm):
     class Meta:
         model = ShortURL
-        fields = ["url", "short_url", "note"]
+        fields = ["url", "short_url", "note", "is_enable"]
 
         widgets = {
             "url": forms.URLInput(
