@@ -19,7 +19,7 @@ def index(request):
         form = ShortURLForm(request.POST)
         if form.is_valid() and fields:
             form = form.save(commit=False)
-            form.short_url = f"http://54.95.125.250:8000/{fields}"
+            form.short_url = f"http://57.180.56.41:8000/{fields}"
             form.is_enable = bool(is_enable)
             form.save()
             messages.success(request, "短網址完成")
@@ -37,16 +37,16 @@ def show(request, id):
 
 def redirect(request, url):
     url_content = ShortURL.objects.filter(
-        short_url=f"http://54.95.125.250:8000/{url}", is_enable=1
+        short_url=f"http://57.180.56.41:8000/{url}", is_enable=1
     ).first()
     url = url_content.url
     return HttpResponseRedirect(url)
 
 
 def random_unique(str_url):
-    short_url = f"http://54.95.125.250:8000/{str_url}"
+    short_url = f"http://57.180.56.41:8000/{str_url}"
     if not ShortURL.objects.filter(short_url=short_url).exists():
-        if str_url == None:
+        if str_url == "":
             radom_field = "".join(random.choices(string.ascii_letters, k=6))
         else:
             radom_field = str_url
