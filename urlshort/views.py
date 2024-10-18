@@ -62,9 +62,14 @@ def information(request):
         soup = BeautifulSoup(web.text, "html.parser")
         title = soup.title.get_text()
         description = soup.find("meta", attrs={"name": "description"})["content"]
+        # breakpoint()
         return render(
             request,
             "pages/index.html",
-            {"web_content": f"{title}\n{description}", "form": form},
+            {
+                "web_content": f"{title}\n{description}",
+                "form": ShortURLForm(initial={"url": url}),
+                "url": url,
+            },
         )
     return render(request, "pages/index.html", {"form": form})

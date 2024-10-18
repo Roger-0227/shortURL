@@ -3,10 +3,10 @@
   {% for message in messages %} {{ message }}
 </div>
 {% endfor%} {% endif %}
-<div x-data="{ url:'' }">
+<div x-data="{ url:'{{ url }}' }">
   <form method="POST" action="{% url 'urlshort:information' %}">
     {% csrf_token %}
-    <input type="hidden" x-model="url" name="url" value="" />
+    <input type="hidden" x-model="url" name="url" value="{{ url }}" />
     <button
       type="submit"
       class="btn btn-ghost border text-xs relative left-1/4 mt-32"
