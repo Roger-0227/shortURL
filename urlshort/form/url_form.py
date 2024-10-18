@@ -8,11 +8,12 @@ class ShortURLForm(forms.ModelForm):
         fields = ["url", "short_url", "note"]
 
         widgets = {
-            "url": forms.TextInput(
+            "url": forms.URLInput(
                 attrs={
                     "class": "input input-bordered flex items-center gap-2 opacity-70 join-item w-full",
                     "name": "url",
                     "placeholder": "http://www.example.com",
+                    "x-model": "url",
                 },
             ),
             "short_url": forms.TextInput(
@@ -25,6 +26,7 @@ class ShortURLForm(forms.ModelForm):
             "note": forms.Textarea(
                 attrs={
                     "class": "textarea textarea-bordered w-full opacity-70",
+                    "placeholder": "備註",
                 },
             ),
         }

@@ -1,11 +1,9 @@
 {% extends "base.html" %} {% block content %} {% load qr_code %} 
-{% if messages%} 
-{% for message in messages %}
+{% if messages%} {% for message in messages %}
 <div class="border bg-red-200 shadow-md p-4 mb-4 text-center">
   {{ message }}
 </div>
-{% endfor%} 
-{% endif %}
+{% endfor%} {% endif %}
 <section class="flex items-center justify-center h-screen flex-nowrap">
   <div class="grid grid-cols-2 gap-2 w-3/4">
     <label class="join w-full">
@@ -44,18 +42,24 @@
         class="textarea textarea-bordered w-full opacity-70"
         placeholder="備註"
       ></textarea>
-      <form
-        action="{% url 'urlshort:index' %}"
-        class="flex justify-end col-span-2"
-      >
-        <button
-          type="submit"
-          class="btn btn-square bg-red-300 hover:bg-red-400 w-1/3"
-        >
-          返回
-        </button>
-      </form>
     </label>
+    <div class="flex justify-start">
+      <label class="label cursor-pointer">
+        <input type="checkbox" class="checkbox" />
+        <span class="label-text px-2">是否啟用短網址</span>
+      </label>
+    </div>
+    <form
+      action="{% url 'urlshort:index' %}"
+      class="flex justify-end col-span-2"
+    >
+      <button
+        type="submit"
+        class="btn btn-square bg-red-300 hover:bg-red-400 w-1/3"
+      >
+        完成
+      </button>
+    </form>
   </div>
   <div>
     <img src="{% qr_url_from_text  form.short_url  %}" alt="qrcode" />

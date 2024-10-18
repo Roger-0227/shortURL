@@ -5,7 +5,8 @@
 
 ## 使用技術
 
-- 後端：Python、Django
+- 後端：Python、Django、Alpine.js
+- 部署：AWS EC2
 - 套件：
   - django-tailwind
   - django-browser-reload
