@@ -25,3 +25,9 @@
 
 1. poetry shell 虛擬環境
 2. poetry install 下載 python 相應套件
+
+- - -
+### 待辦事項
+- 縮址庫存
+    - 啟用之後如何關閉
+    - 未啟用之後如何開啟
