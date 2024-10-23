@@ -115,6 +115,17 @@ django = ">=3.2.14"
 reload = ["django-browser-reload (>=1.12.1,<2.0.0)"]
 
 [[package]]
+name = "fake-useragent"
+version = "1.5.1"
+description = "Up-to-date simple useragent faker with real world database"
+optional = false
+python-versions = "*"
+files = [
+    {file = "fake-useragent-1.5.1.tar.gz", hash = "sha256:6387269f5a2196b5ba7ed8935852f75486845a1c95c50e72460e6a8e762f5c49"},
+    {file = "fake_useragent-1.5.1-py3-none-any.whl", hash = "sha256:57415096557c8a4e23b62a375c21c55af5fd4ba30549227f562d2c4f5b60e3b3"},
+]
+
+[[package]]
 name = "pydantic"
 version = "2.9.2"
 description = "Data validation using Python type hints"
@@ -311,7 +322,21 @@ files = [
     {file = "tzdata-2024.2.tar.gz", hash = "sha256:7d85cc416e9382e69095b7bdf4afd9e3880418a2413feec7069d533d6b4e31cc"},
 ]
 
+[[package]]
+name = "whitenoise"
+version = "6.7.0"
+description = "Radically simplified static file serving for WSGI applications"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "whitenoise-6.7.0-py3-none-any.whl", hash = "sha256:a1ae85e01fdc9815d12fa33f17765bc132ed2c54fa76daf9e39e879dd93566f6"},
+    {file = "whitenoise-6.7.0.tar.gz", hash = "sha256:58c7a6cd811e275a6c91af22e96e87da0b1109e9a53bb7464116ef4c963bf636"},
+]
+
+[package.extras]
+brotli = ["brotli"]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "bb76c9ab2254b4f278c0404548508546d49fc12a460e50cc76c468bd8c3b6039"
+content-hash = "b31cb35e5ec847949d0bf0b72b40685e7c26ff0554893f45c2f160ff0763e09d"

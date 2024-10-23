@@ -6,6 +6,9 @@ from urlshort.form.url_form import ShortURLForm
 from django.contrib import messages
 import requests
 from bs4 import BeautifulSoup
+from fake_useragent import UserAgent
+import time
+import re
 
 
 def out_home(request):
@@ -58,12 +61,15 @@ def information(request):
     form = ShortURLForm(request.POST)
     url = request.POST.get("url")
     if url:
-        web = requests.get(url)
+        user_agent = UserAgent().random
+        web = requests.get(url, {"user-agent": user_agent})
         web.encoding = "utf-8"
         soup = BeautifulSoup(web.text, "html.parser")
         title = soup.title.get_text()
-        description = soup.find("meta", attrs={"name": "description"})["content"]
-        # breakpoint()
+        description = soup.find("meta", attrs={"name": re.compile(r"description")})[
+            "content"
+        ]
+        time.sleep(5)
         return render(
             request,
             "pages/index.html",
