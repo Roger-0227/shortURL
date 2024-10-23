@@ -13,21 +13,25 @@
 
 ## 使用技術
 
-- 後端：Python、Django、Alpine.js
-- 部署：AWS EC2
-- 套件：
+- 後端：
+  - Python、Django、Alpine.js
   - django-tailwind
-  - django-browser-reload
   - django-qr-code
-  - beautifulsoup4
+  - beautifulsoup4 / fake-useragent
+- 部署：AWS EC2
 
 ### 執行環境
 
-1. poetry shell 虛擬環境
-2. poetry install 下載 python 相應套件
+1. `poetry shell` 虛擬環境
+2. `poetry install 下載 python` 相依套件
+3. `python manage.py makemigrations` 建立資料庫
+4. `python manage.py migrate` 遷移資料到資料庫
+5. `python manage.py runserver` 啟動 Web Server
 
-- - -
+---
+
 ### 待辦事項
+
 - 縮址庫存
-    - 啟用之後如何關閉
-    - 未啟用之後如何開啟
+  - 啟用之後如何關閉
+  - 未啟用之後如何開啟
