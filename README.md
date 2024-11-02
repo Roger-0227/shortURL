@@ -22,11 +22,12 @@
 
 ### 執行環境
 
-1. `poetry shell` 虛擬環境
-2. `poetry install 下載 python` 相依套件
+1. `poetry shell` 進入虛擬環境
+2. `poetry install` 下載 相依套件
 3. `python manage.py makemigrations` 建立資料庫
 4. `python manage.py migrate` 遷移資料到資料庫
-5. `python manage.py runserver` 啟動 Web Server
+5. `python manage.py tailwind start` 啟動 Tailwind 模組並監視變更
+6. `python manage.py runserver` 啟動 Web Server
 
 ---
 
