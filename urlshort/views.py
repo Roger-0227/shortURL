@@ -1,14 +1,16 @@
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 import random
+import re
 import string
-from urlshort.models import ShortURL
-from urlshort.form.url_form import ShortURLForm
-from django.contrib import messages
+import time
+
 import requests
 from bs4 import BeautifulSoup
+from django.contrib import messages
+from django.shortcuts import HttpResponseRedirect, get_object_or_404, render
 from fake_useragent import UserAgent
-import time
-import re
+
+from urlshort.form.url_form import ShortURLForm
+from urlshort.models import ShortURL
 
 
 def out_home(request):
@@ -75,7 +77,7 @@ def information(request):
             "pages/index.html",
             {
                 "web_content": f"{title}\n{description}",
-                "form": ShortURLForm(initial={"url": url}),
+                "form": ShortURLForm(initial={"note": f"{title}\n{description}"}),
                 "url": url,
             },
         )

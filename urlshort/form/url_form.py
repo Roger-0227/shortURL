@@ -1,4 +1,5 @@
 from django import forms
+
 from urlshort.models import ShortURL
 
 
@@ -26,6 +27,7 @@ class ShortURLForm(forms.ModelForm):
             "note": forms.Textarea(
                 attrs={
                     "class": "textarea textarea-bordered w-full opacity-70",
+                    "name": "note",
                     "placeholder": "備註",
                 },
             ),

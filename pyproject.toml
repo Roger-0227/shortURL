@@ -15,6 +15,7 @@ python-dotenv = "^1.0.1"
 beautifulsoup4 = "^4.12.3"
 fake-useragent = "^1.5.1"
 whitenoise = "^6.7.0"
+pre-commit = "^4.0.1"
 
 
 [build-system]

@@ -35,14 +35,7 @@
         >
         {{ form.short_url }}
       </label>
-      <label class="col-span-2 join">
-        <textarea
-          class="textarea textarea-bordered w-full opacity-70"
-          placeholder="備註"
-        >
-{{ web_content }}</textarea
-        >
-      </label>
+      <label class="col-span-2 join"> {{ form.note }} </label>
       <div class="flex justify-start">
         <label class="label cursor-pointer">
           <input type="checkbox" class="checkbox" name="is_enable" />

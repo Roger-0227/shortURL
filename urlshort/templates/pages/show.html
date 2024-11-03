@@ -37,11 +37,13 @@
         <i class="fa-regular fa-copy"></i>
       </button>
     </label>
-    <label class="col-span-2">
+    <label class="col-span-2 join">
       <textarea
         class="textarea textarea-bordered w-full opacity-70"
         placeholder="備註"
-      ></textarea>
+      >
+{{ form.note }}</textarea
+      >
     </label>
     <form
       action="{% url 'urlshort:index' %}"

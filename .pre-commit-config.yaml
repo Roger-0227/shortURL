@@ -1,0 +1,38 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 'v4.6.0'
+    hooks:
+      - id: check-added-large-files
+        name: 檢查：大型檔案
+      - id: debug-statements
+        name: 檢查：Debug 資訊
+      - id: detect-aws-credentials
+        name: 檢查：AWS 金鑰外流
+      - id: fix-byte-order-marker
+        name: 修正：移除 UTF-8 BOM
+      - id: requirements-txt-fixer
+        name: 修正：requirements.txt
+
+  - repo: https://github.com/python-poetry/poetry
+    rev: '1.8.3'
+    hooks:
+      - id: poetry-export
+        name: 安裝：匯出安裝套件
+        args: [
+          "-f", "requirements.txt",
+          "-o", "requirements.txt"
+        ]
+
+  - repo: https://github.com/pycqa/isort
+    rev: '5.13.2'
+    hooks:
+      - id: isort
+        name: 修正：套件 import 順序
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: 'v0.5.2'
+    hooks:
+    -   id: ruff
+        name: 修正：自動格式化
+        alias: autoformat
+        args: [--fix]
