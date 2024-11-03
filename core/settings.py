@@ -33,7 +33,6 @@ SECRET_KEY = os.getenv("APP_SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "54.95.125.250",
     "57.180.56.41",
     "127.0.0.1",
 ]

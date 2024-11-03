@@ -31,8 +31,7 @@
         value="{{ form.short_url }}"
       />
       <button
-        @click="navigator.clipboard.writeText($refs.content.value)"
-        onclick="return confirm('已複製至剪貼簿')"
+        @click="navigator.clipboard.writeText($refs.content.value).then(() => alert('已複製至剪貼簿'))"
         class="btn w-[60px] text-xl hover:bg-gray-300"
       >
         <i class="fa-regular fa-copy"></i>

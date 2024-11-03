@@ -1,4 +1,16 @@
 from django.db import models
+from django.utils import timezone
+
+
+class User(models.Model):
+    email = models.EmailField()
+    birthday = models.DateField(blank=True, null=True)
+    phone = models.CharField(max_length=15, blank=True, null=False, default="")
+    address = models.CharField(max_length=100, blank=False, null=False, default="")
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"{self.username}"
 
 
 class ShortURL(models.Model):
