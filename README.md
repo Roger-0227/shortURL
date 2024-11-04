@@ -13,11 +13,17 @@
 
 ## 使用技術
 
-- 後端：
-  - Python、Django、Alpine.js
+- 前端：
+
+  - Alpine.js
   - django-tailwind
+
+- 後端：
+
+  - Python、Django
   - django-qr-code
   - beautifulsoup4 / fake-useragent
+
 - 部署：AWS EC2
 
 ### 執行環境
